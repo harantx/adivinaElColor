@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css2?family=Lakki+Reddy&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    background-color: #000;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin-left: 1rem;
+    font-family: "Lakki Reddy", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: calc(2vw + 1rem);
+    padding-top: 1rem;
+}
+
+header button {
+    background-color: transparent;
+    color: #fff;
+    padding: 1rem;
+    margin-right: 20px;
+    font-size: 1rem;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+main {
+    display: grid;
+    grid-template-rows: 100px 300px auto
+}
+
+.infoPartida {
+    margin: 20px;
+    padding: 0 20px;
+    background-color: transparent;
+    border: 2px solid #000;
+    border-radius: 32px;
+    display: grid;
+    grid-template-columns: 100px auto 100px;
+}
+
+.aciertos, .fallos, #mensaje {
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.aciertos {
+    justify-content: flex-start;
+}
+
+.fallos {
+    justify-content: flex-end;
+}
+
+#mensaje {
+    justify-content: center;
+    padding-top: 1rem;
+}
+/* .aciertos {
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+#mensaje {
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+.fallos {
+    font-size: 1.2rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+} */
+
+.cajaPrincipal {
+    display: grid;
+    place-items: center;
+    padding-top: 2rem;
+}
+
+#codigo {
+    padding: 2rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+#codigo span {
+    margin-bottom: 5px;
+}
+
+#codigo span:nth-child(odd) {
+    font-weight: bold; 
+    margin-right: 5px;
+}
+
+#codigo span:nth-child(even) {
+    font-weight: normal; 
+}
+
+#muestra {
+    width: 25rem;
+    height: 25rem;
+    border-color: #000;
+    border-radius: 50%;
+    border: 2px solid; */ Quitar borde si conseguimos fondo de colores */
+    background-color: transparent;
+    display: grid;
+}
+
+.cajaOpciones {
+    padding-top: 15rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.cajaOpciones div {
+    width: 10rem;
+    height: 10rem;
+    margin: 1rem;
+    border-color: #000;
+    border-radius: 50%;
+    border: 2px solid;
+    background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popUpInicial {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1000; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+}
+
+.popUp {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    max-height: 60vh;    
+    max-width: 70vh;  
+}
+
+#popUpPerdido, #popUpGanado {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1000; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 80%;
+    /* max-width: 300px; 
+    max-height: 200px;  */
+    overflow: auto; 
+}
+
+#popUpPerdido .contenidoPopUp, #popUpGanado .contenidoPopUp {
+    max-width: 30vw; 
+    padding: rem 1rem;  
+}
+
+.contenidoPopUp {
+    background-color: #fefefe;
+    width: 100vw;      
+    max-width: 80vw;  
+    max-height: 60vh; 
+    padding: 3rem 6rem; 
+    border: 2px solid black;
+    border-radius: 250px;
+    font-size: 1.1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    text-align: center; 
+}
+
+#botonJuguemos {
+    background-color: white; 
+    color: black; 
+    font-size: 1.2em; 
+    font-weight: bold;
+    border: dashed 2px transparent;
+    border-radius: 50px; 
+    cursor: pointer;     
+    transition: all 0.3s;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    padding: 0.5rem 1rem;
+    height: 2em;
+    line-height: 2em;
+    position: relative;
+}
+
+#botonJuguemos:hover {
+    font-family: "Lakki Reddy", serif;
+    /* font-size: 1.4em;
+    height: 1em;
+    line-height: 1em; */
+    transform: scale(1.1);
+}
+
+.botonDeNuevo {
+    background-color: white;
+    color: black;
+    font-size: 1.2em; 
+    font-weight: bold;
+    border: dashed 2px transparent;
+    border-radius: 50px; 
+    cursor: pointer;     
+    transition: all 0.3s;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    padding: 0.5rem 1rem;
+    height: 2em;
+    line-height: 2em;
+    position: relative;
+}
+
+.botonDeNuevo:hover {
+    font-family: "Lakki Reddy", serif;
+    transform: scale(1.1);
+}
+
+.fondoTransparente {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+    z-index: 999; 
+}
+
+@media screen and (min-width: 1024px) {
+    .popUpInicial {
+        max-height: 90vh;    
+        max-width: 90vh;  
+    }
+
+    .contenidoPopUp {
+        width: 90%;      
+        padding: 3rem;   
+        border-radius: 250px;
+    }
+
+    #popUpPerdido .contenidoPopUp, #popUpGanado .contenidoPopUp {
+        max-height: 90vh;    
+        max-width: 90vh; 
+        width: 90%;      
+        padding: 3rem;   
+        border-radius: 250px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        width: 100%;
+        padding-right: 1rem;
+        display: flex;
+        height: 10vh;
+        justify-content: center; 
+    }
+      
+    .popUpInicial {
+        border-radius: 10px; 
+        max-width: 90%;
+        max-height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #popUpPerdido .contenidoPopUp, #popUpGanado .contenidoPopUp {
+        padding: 2rem 4rem 2rem;
+        width: 70vw;
+        height: 30vh;
+        max-width: none;
+        max-height: none;
+    }
+
+    .contenidoPopUp {
+        padding: 3rem 4rem; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center; 
+        text-align: center;
+    }
+    
+    #botonJuguemos, .botonDeNuevo {
+        font-size: 4vw; 
+        height: 1.5em; 
+        line-height: 1.2em;
+        margin-top: 1rem;
+        font-family: "Lakki Reddy", serif;
+    }
+    
+    #nuevoJuego {
+          display: none;
+    }
+
+    #mensaje {
+        font-size: 4vw; 
+        text-align: center;
+        padding-top: 2vw;
+    }
+
+    #muestra {
+        width: 20rem;
+        height: 20rem;
+    }
+
+    .cajaOpciones {
+        padding-top: 11rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cajaOpciones div {
+        width: 8rem; 
+        height: 8rem; 
+        border-color: #000;
+        border-radius: 50%;
+        border: 2px solid;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    header {
+        width: 100%;
+        padding-right: 1rem;
+        display: flex;
+        height: 10vh;
+        justify-content: center; 
+    }
+      
+    .popUpInicial {
+        border-radius: 10px; 
+        max-width: 90%;
+        max-height: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #popUpPerdido .contenidoPopUp, #popUpGanado .contenidoPopUp {
+        padding: 2rem 4rem 2rem;
+        width: 70vw;
+        height: 30vh;
+        max-width: none;
+        max-height: none;
+    }
+
+    .contenidoPopUp {
+        padding: 3rem 4rem; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        align-items: center; 
+        text-align: center;
+    }
+    
+    #botonJuguemos, .botonDeNuevo {
+        font-size: 5vw; 
+        height: 1.5em; 
+        line-height: 1.2em;
+        margin-top: 1rem;
+        font-family: "Lakki Reddy", serif;
+    }
+    
+    #nuevoJuego {
+          display: none;
+    }
+
+    #mensaje {
+        font-size: 5vw; 
+        text-align: center;
+        padding-top: 2vw;
+    }
+
+    #muestra {
+        width: 21rem;
+        height: 21rem;
+    }
+
+    .cajaOpciones {
+        padding-top: 9rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+    }
+
+    .cajaOpciones div {
+        width: 5rem; 
+        height: 5rem; 
+        margin: 0.5rem; 
+        border-color: #000;
+        border-radius: 50%;
+        border: 2px solid;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
